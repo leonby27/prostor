@@ -155,3 +155,61 @@ h4 {
 .hairline {
   border-color: color-mix(in srgb, var(--color-stone) 80%, transparent);
 }
+
+/* ============================================================
+   V2 — «Ночной шоурум» (страница /new)
+   Тёмный тёплый уголь, кремовый текст, медный акцент.
+   Класс на обёртке страницы переопределяет токены палитры,
+   поэтому все утилиты (bg-paper, text-ink…) работают как есть.
+   Значения заданы на обёртке — они побеждают и .dark на <html>.
+   ============================================================ */
+
+.v2 {
+  color-scheme: dark;
+
+  --color-paper: #131110; /* фон — тёплый уголь */
+  --color-sand: #1b1815; /* поверхности */
+  --color-stone: #2e2922; /* линии, border */
+  --color-ink: #f3eee5; /* основной текст — крем */
+  --color-muted: #a59c8d; /* вторичный текст */
+  --color-clay: #d97a51; /* акцент — медь */
+  --color-clay-dark: #c0683f;
+  --color-clay-soft: #2e2018;
+  --color-espresso: #0c0b0a;
+  --color-espresso-2: #191613;
+  --color-cream: #f3eee5;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 8px 16px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Бегущая строка: два одинаковых блока внутри трека, сдвиг на 50%. */
+@keyframes v2-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.v2-marquee {
+  display: flex;
+  width: max-content;
+  animation: v2-marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.v2-marquee--reverse {
+  animation-direction: reverse;
+}
+
+.v2-marquee-mask:hover .v2-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v2-marquee {
+    animation: none;
+  }
+}
