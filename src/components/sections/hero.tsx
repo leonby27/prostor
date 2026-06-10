@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useLayoutEffect, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Star,
@@ -11,12 +11,45 @@ import {
 } from "@phosphor-icons/react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Kitchen3D } from "@/components/three/kitchen-3d";
 import { site } from "@/lib/site";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const visualRef = useRef<HTMLDivElement>(null);
+
+  // GSAP: лёгкий scroll-параллакс 3D-сцены и декоративного пятна.
+  // Контекст со scope чистится в cleanup — снимает все ScrollTrigger'ы.
+  useLayoutEffect(() => {
+    if (prefersReducedMotion() || !sectionRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.to(visualRef.current, {
+        yPercent: -12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 0.6,
+        },
+      });
+      gsap.to("[data-hero-blob]", {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 0.6,
+        },
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
   const fade = (delay: number) =>
     reduce
@@ -28,10 +61,11 @@ export function Hero() {
         };
 
   return (
-    <section id="top" className="relative overflow-hidden bg-paper bg-grain pt-28 pb-16 sm:pt-32 sm:pb-24">
+    <section ref={sectionRef} id="top" className="relative overflow-hidden bg-paper bg-grain pt-28 pb-16 sm:pt-32 sm:pb-24">
       {/* Декоративное пятно */}
       <div
         aria-hidden
+        data-hero-blob
         className="pointer-events-none absolute -right-40 -top-32 h-[34rem] w-[34rem] rounded-full bg-clay/10 blur-3xl dark:bg-clay/[0.04]"
       />
 
@@ -108,22 +142,16 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Правая колонка — фото */}
+          {/* Правая колонка — интерактивная 3D-кухня */}
           <motion.div
+            ref={visualRef}
             initial={reduce ? false : { opacity: 0, scale: 0.96 }}
             animate={reduce ? undefined : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.15 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lift sm:aspect-[4/4.2]">
-              <Image
-                src="/images/hero-kitchen.jpg"
-                alt="Современная светлая кухня на заказ"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-sand shadow-lift sm:aspect-[4/4.2]">
+              <Kitchen3D />
             </div>
 
             {/* Плавающая карточка: рейтинг */}
