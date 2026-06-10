@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -11,7 +12,6 @@ import {
 } from "@phosphor-icons/react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Kitchen3D } from "@/components/three/kitchen-3d";
 import { site } from "@/lib/site";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
@@ -142,7 +142,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Правая колонка — интерактивная 3D-кухня */}
+          {/* Правая колонка — фото */}
           <motion.div
             ref={visualRef}
             initial={reduce ? false : { opacity: 0, scale: 0.96 }}
@@ -150,8 +150,15 @@ export function Hero() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.15 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-sand shadow-lift sm:aspect-[4/4.2]">
-              <Kitchen3D />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lift sm:aspect-[4/4.2]">
+              <Image
+                src="/images/hero-kitchen.jpg"
+                alt="Современная светлая кухня на заказ"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
 
             {/* Плавающая карточка: рейтинг */}
