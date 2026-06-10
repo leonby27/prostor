@@ -4,11 +4,14 @@ import { HeroNew } from "@/components/new/hero";
 import { TickerNew } from "@/components/new/ticker";
 import { StatsNew } from "@/components/new/stats";
 import { AdvantagesNew } from "@/components/new/advantages";
+import { ScenariosNew } from "@/components/new/scenarios";
+import { PromosNew } from "@/components/new/promos";
 import { WorksNew } from "@/components/new/works";
-import { PricingNew } from "@/components/new/pricing";
+import { StylesNew } from "@/components/new/styles";
 import { QuizNew } from "@/components/new/quiz";
 import { ProcessNew } from "@/components/new/process";
 import { ReviewsNew } from "@/components/new/reviews";
+import { ShowroomNew } from "@/components/new/showroom";
 import { FaqNew } from "@/components/new/faq";
 import { CtaNew } from "@/components/new/cta";
 import { FooterNew } from "@/components/new/footer";
@@ -37,11 +40,14 @@ export default function NewPage() {
         <TickerNew />
         <StatsNew />
         <AdvantagesNew />
+        <ScenariosNew />
+        <PromosNew />
         <WorksNew />
-        <PricingNew />
+        <StylesNew />
         <QuizNew />
         <ProcessNew />
         <ReviewsNew />
+        <ShowroomNew />
         <FaqNew />
         <CtaNew />
       </main>

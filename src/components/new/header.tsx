@@ -8,12 +8,12 @@ import { site } from "@/lib/site";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const anchors = [
+  { label: "Задачи", href: "#scenarios" },
   { label: "Работы", href: "#works" },
-  { label: "Цены", href: "#pricing" },
+  { label: "Стили", href: "#styles" },
   { label: "Расчёт", href: "#quiz" },
-  { label: "Процесс", href: "#process" },
   { label: "Отзывы", href: "#reviews" },
-  { label: "Вопросы", href: "#faq" },
+  { label: "Шоурум", href: "#showroom" },
 ];
 
 export function HeaderNew() {
