@@ -32,7 +32,7 @@ export function Hero() {
       {/* Декоративное пятно */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 -top-32 h-[34rem] w-[34rem] rounded-full bg-clay/10 blur-3xl"
+        className="pointer-events-none absolute -right-40 -top-32 h-[34rem] w-[34rem] rounded-full bg-clay/10 blur-3xl dark:bg-clay/[0.04]"
       />
 
       <Container className="relative">
