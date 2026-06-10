@@ -19,7 +19,12 @@ export function StylesCatalog() {
         {styles.map((s, i) => (
           <RevealItem
             key={s.id}
-            className={cn(i === 0 && "col-span-2 lg:row-span-2")}
+            className={cn(
+              i === 0 && "col-span-2 lg:row-span-2",
+              // последняя карточка тянется на всю ширину на мобильном,
+              // чтобы нижний ряд сетки был ровным (нечётное число малых карточек)
+              i === styles.length - 1 && "col-span-2 lg:col-span-1",
+            )}
           >
             <StyleCard style={s} large={i === 0} />
           </RevealItem>

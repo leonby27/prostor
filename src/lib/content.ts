@@ -334,6 +334,12 @@ export const styles: Style[] = [
     description: "Чистые линии, контраст и функциональность",
     image: "/images/style-minimal.jpg",
   },
+  {
+    id: "loft",
+    name: "Лофт",
+    description: "Бетон, металл и тёплое дерево, характер индустрии",
+    image: "/images/style-loft.jpg",
+  },
 ];
 
 /* =========================== Наши работы =========================== */
