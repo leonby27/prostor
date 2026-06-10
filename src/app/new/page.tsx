@@ -5,6 +5,7 @@ import { TickerNew } from "@/components/new/ticker";
 import { StatsNew } from "@/components/new/stats";
 import { WorksNew } from "@/components/new/works";
 import { PricingNew } from "@/components/new/pricing";
+import { QuizNew } from "@/components/new/quiz";
 import { ProcessNew } from "@/components/new/process";
 import { ReviewsNew } from "@/components/new/reviews";
 import { FaqNew } from "@/components/new/faq";
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
 export default function NewPage() {
   return (
     <div className="v2 min-h-screen bg-paper text-ink">
+      {/* Тема v2 до первой отрисовки: по умолчанию тёмная,
+          светлая — если пользователь её выбрал (ключ theme-v2). */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{if(localStorage.getItem('theme-v2')==='light')document.documentElement.classList.add('v2-light');}catch(e){}})();`,
+        }}
+      />
       <HeaderNew />
       <main>
         <HeroNew />
@@ -29,6 +37,7 @@ export default function NewPage() {
         <StatsNew />
         <WorksNew />
         <PricingNew />
+        <QuizNew />
         <ProcessNew />
         <ReviewsNew />
         <FaqNew />

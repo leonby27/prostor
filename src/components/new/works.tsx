@@ -45,6 +45,8 @@ export function WorksNew() {
 
   return (
     <section ref={root} id="works" className="overflow-hidden pt-24 sm:pt-32">
+      {/* Алиас для ссылки «Смотреть работы» (#gallery) из общего квиза */}
+      <span id="gallery" aria-hidden />
       <SectionTitleNew
         num="01"
         eyebrow="Наши работы"

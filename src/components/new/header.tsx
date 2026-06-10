@@ -3,12 +3,14 @@
 import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { Phone } from "@phosphor-icons/react";
+import { ThemeToggleNew } from "./theme-toggle";
 import { site } from "@/lib/site";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const anchors = [
   { label: "Работы", href: "#works" },
   { label: "Цены", href: "#pricing" },
+  { label: "Расчёт", href: "#quiz" },
   { label: "Процесс", href: "#process" },
   { label: "Отзывы", href: "#reviews" },
   { label: "Вопросы", href: "#faq" },
@@ -58,7 +60,8 @@ export function HeaderNew() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <ThemeToggleNew />
           <a
             href={site.phone.href}
             className="hidden items-center gap-2 text-sm font-semibold text-ink sm:flex"

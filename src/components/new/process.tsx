@@ -41,7 +41,7 @@ export function ProcessNew() {
   return (
     <section ref={root} id="process" className="pt-24 sm:pt-32">
       <SectionTitleNew
-        num="03"
+        num="04"
         eyebrow="Как мы работаем"
         title="Шесть шагов до готовой кухни"
       />

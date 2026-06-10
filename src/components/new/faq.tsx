@@ -6,7 +6,7 @@ import { faq } from "@/lib/content";
 export function FaqNew() {
   return (
     <section id="faq" className="pt-24 sm:pt-32">
-      <SectionTitleNew num="05" eyebrow="Вопросы" title="Спрашивают перед заказом" />
+      <SectionTitleNew num="06" eyebrow="Вопросы" title="Спрашивают перед заказом" />
 
       <div className="mx-auto mt-12 max-w-7xl px-5 sm:px-8">
         <div className="divide-y divide-stone border-y border-stone">

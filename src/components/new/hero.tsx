@@ -112,7 +112,7 @@ export function HeroNew() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
               data-hero-cta
-              href="#lead"
+              href="#quiz"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-clay px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-clay-dark"
             >
               Рассчитать кухню

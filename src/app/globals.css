@@ -184,6 +184,32 @@ h4 {
   --shadow-lift: 0 8px 16px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
+/* Светлая тема v2: класс v2-light на <html> (ключ localStorage theme-v2).
+   Тот же издательский характер — тёплый «галерейный» белый, медь остаётся.
+   Тёмные блоки (espresso: тикер, CTA, сайдбар квиза) сознательно тёмные. */
+.v2-light .v2 {
+  color-scheme: light;
+
+  --color-paper: #f8f5ef;
+  --color-sand: #efe9de;
+  --color-stone: #ded4c4;
+  --color-ink: #1d1a16;
+  --color-muted: #756d60;
+  --color-clay: #c15f3c;
+  --color-clay-dark: #a44c2d;
+  --color-clay-soft: #f3e2d8;
+  --color-espresso: #211e19;
+  --color-espresso-2: #2c2823;
+  --color-cream: #efe9df;
+
+  --shadow-soft: 0 1px 2px rgba(28, 26, 22, 0.04),
+    0 8px 24px rgba(28, 26, 22, 0.06);
+  --shadow-card: 0 2px 4px rgba(28, 26, 22, 0.04),
+    0 16px 40px rgba(28, 26, 22, 0.08);
+  --shadow-lift: 0 8px 16px rgba(28, 26, 22, 0.08),
+    0 24px 60px rgba(28, 26, 22, 0.12);
+}
+
 /* Бегущая строка: два одинаковых блока внутри трека, сдвиг на 50%. */
 @keyframes v2-marquee {
   from {

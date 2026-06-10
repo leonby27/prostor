@@ -80,7 +80,7 @@ export function PricingNew() {
               </ul>
 
               <a
-                href="#lead"
+                href="#quiz"
                 className={`mt-8 inline-flex justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${
                   featured
                     ? "bg-clay text-white hover:bg-clay-dark"

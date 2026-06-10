@@ -36,7 +36,7 @@ export function ReviewsNew() {
   return (
     <section id="reviews" className="pt-24 sm:pt-32">
       <SectionTitleNew
-        num="04"
+        num="05"
         eyebrow="Отзывы · 4.9 из 5"
         title="Что говорят на новых кухнях"
       />
