@@ -3,6 +3,7 @@ import { HeaderNew } from "@/components/new/header";
 import { HeroNew } from "@/components/new/hero";
 import { TickerNew } from "@/components/new/ticker";
 import { StatsNew } from "@/components/new/stats";
+import { AdvantagesNew } from "@/components/new/advantages";
 import { WorksNew } from "@/components/new/works";
 import { PricingNew } from "@/components/new/pricing";
 import { QuizNew } from "@/components/new/quiz";
@@ -35,6 +36,7 @@ export default function NewPage() {
         <HeroNew />
         <TickerNew />
         <StatsNew />
+        <AdvantagesNew />
         <WorksNew />
         <PricingNew />
         <QuizNew />

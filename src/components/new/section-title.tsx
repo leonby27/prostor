@@ -1,26 +1,28 @@
-/** Издательский заголовок секции: номер · рубрика / крупный титул. */
+/** Классический заголовок секции: надзаголовок, титул, подзаголовок — по центру. */
 export function SectionTitleNew({
-  num,
   eyebrow,
   title,
+  subtitle,
   className = "",
 }: {
-  num: string;
   eyebrow: string;
   title: string;
+  subtitle?: string;
   className?: string;
 }) {
   return (
-    <div className={`mx-auto max-w-7xl px-5 sm:px-8 ${className}`}>
-      <div className="flex items-baseline gap-4 border-b border-stone pb-5">
-        <span className="font-display text-sm font-bold text-clay">{num}</span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-          {eyebrow}
-        </span>
-      </div>
-      <h2 className="mt-8 max-w-3xl font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-ink sm:text-6xl">
+    <div className={`mx-auto max-w-3xl px-5 text-center sm:px-8 ${className}`}>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-clay">
+        {eyebrow}
+      </p>
+      <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
+      {subtitle && (
+        <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }

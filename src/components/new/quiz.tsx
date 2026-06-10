@@ -336,9 +336,9 @@ export function QuizNew() {
   return (
     <section id="quiz" className="scroll-mt-20 pt-24 sm:pt-32">
       <SectionTitleNew
-        num="03"
         eyebrow="Расчёт за минуту"
         title="Соберите кухню за шесть ответов"
+        subtitle="Цена видна сразу и уточняется с каждым ответом."
       />
 
       <div className="mx-auto mt-12 max-w-7xl px-5 sm:px-8">

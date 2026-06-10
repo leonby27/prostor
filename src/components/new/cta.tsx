@@ -42,7 +42,7 @@ export function CtaNew() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-clay">
             Бесплатно и ни к чему не обязывает
           </p>
-          <h2 className="mt-5 max-w-3xl font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-cream sm:text-6xl">
+          <h2 className="mt-5 max-w-3xl font-display text-3xl font-extrabold leading-[1.08] tracking-tight text-cream sm:text-5xl">
             Начнём с замера —{" "}
             <span className="text-clay">увидите свою кухню в 3D</span>
           </h2>

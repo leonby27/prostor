@@ -6,9 +6,9 @@ export function PricingNew() {
   return (
     <section id="pricing" className="pt-24 sm:pt-32">
       <SectionTitleNew
-        num="02"
         eyebrow="Цены"
         title="Три честные комплектации"
+        subtitle="Замер, 3D-проект, доставка и монтаж уже в цене — в любой из них."
       />
 
       <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-3">

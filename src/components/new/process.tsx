@@ -41,9 +41,9 @@ export function ProcessNew() {
   return (
     <section ref={root} id="process" className="pt-24 sm:pt-32">
       <SectionTitleNew
-        num="04"
         eyebrow="Как мы работаем"
         title="Шесть шагов до готовой кухни"
+        subtitle="Прозрачный процесс без сюрпризов — вы знаете, что происходит на каждом этапе."
       />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -73,7 +73,7 @@ export function ProcessNew() {
                   />
                 </div>
                 <div className="max-w-xl">
-                  <h3 className="font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+                  <h3 className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">
                     {s.title}
                   </h3>
                   <p className="mt-2.5 leading-relaxed text-muted">{s.text}</p>
