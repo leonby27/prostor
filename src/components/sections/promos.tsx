@@ -90,7 +90,7 @@ const toneStyles: Record<
     cta: "bg-clay text-white hover:bg-clay-dark",
   },
   sand: {
-    card: "bg-paper text-ink border border-stone",
+    card: "bg-paper text-ink border border-stone dark:border-transparent",
     badge: "bg-clay-soft text-clay",
     text: "text-ink",
     sub: "text-muted",

@@ -36,7 +36,7 @@ export function Showroom() {
 
           {/* Инфо + карта */}
           <div className="flex flex-col gap-6">
-            <div className="rounded-3xl border border-stone bg-paper p-7 sm:p-8">
+            <div className="rounded-3xl border border-stone bg-paper p-7 sm:p-8 dark:border-transparent">
               <ul className="flex flex-col gap-5">
                 <ContactRow icon={MapPin} title="Адрес" value={site.address} />
                 <ContactRow icon={Clock} title="Режим работы" value={site.hours} />
@@ -81,7 +81,7 @@ export function Showroom() {
             </div>
 
             {/* Карта */}
-            <div className="overflow-hidden rounded-3xl border border-stone shadow-soft">
+            <div className="overflow-hidden rounded-3xl border border-stone shadow-soft dark:border-transparent">
               <iframe
                 title="Карта проезда"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=27.430%2C53.898%2C27.475%2C53.918&layer=mapnik&marker=53.9080%2C27.4525"

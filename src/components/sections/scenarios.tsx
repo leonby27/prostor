@@ -61,7 +61,7 @@ export function Scenarios() {
               type="button"
               onClick={() => setExpanded((v) => !v)}
               aria-expanded={expanded}
-              className="inline-flex items-center gap-2 rounded-full border border-stone bg-paper px-6 py-3 text-sm font-semibold text-ink shadow-soft transition-all hover:-translate-y-0.5 hover:border-clay/30 hover:shadow-card"
+              className="inline-flex items-center gap-2 rounded-full border border-stone bg-paper px-6 py-3 text-sm font-semibold text-ink shadow-soft transition-all hover:-translate-y-0.5 hover:border-clay/30 hover:shadow-card dark:border-transparent"
             >
               {expanded ? "Свернуть" : `Показать ещё ${extra.length}`}
               <CaretDown
@@ -83,7 +83,7 @@ function ScenarioCard({ scenario }: { scenario: Scenario }) {
   return (
     <a
       href="#quiz"
-      className="group flex h-full flex-col rounded-2xl border border-stone bg-paper p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-clay/30 hover:shadow-card"
+      className="group flex h-full flex-col rounded-2xl border border-stone bg-paper p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-clay/30 hover:shadow-card dark:border-transparent"
     >
       <div className="flex items-center justify-between">
         <span className="grid h-13 w-13 place-items-center rounded-2xl bg-clay-soft text-clay transition-colors group-hover:bg-clay group-hover:text-white">

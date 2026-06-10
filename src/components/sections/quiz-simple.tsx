@@ -616,7 +616,7 @@ function ExtrasStep({
                 "flex items-center justify-between gap-2 rounded-2xl border p-4 text-left transition-all duration-200 active:scale-[0.99]",
                 active
                   ? "border-clay bg-clay-soft"
-                  : "border-stone bg-paper hover:border-clay/40 hover:bg-sand/60",
+                  : "border-stone bg-paper hover:border-clay/40 hover:bg-sand/60 dark:border-transparent",
               )}
             >
               <span>
@@ -686,7 +686,7 @@ function StepContent({
                 "group flex items-center justify-between gap-2 rounded-2xl border p-4 text-left transition-all duration-200 active:scale-[0.98]",
                 active
                   ? "border-clay bg-clay-soft"
-                  : "border-stone bg-paper hover:border-clay/40 hover:bg-sand/60",
+                  : "border-stone bg-paper hover:border-clay/40 hover:bg-sand/60 dark:border-transparent",
               )}
             >
               <span>
