@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { SectionTitleNew } from "./section-title";
 import { steps } from "@/lib/content";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, prefersReducedMotion, staggerReveal } from "@/lib/gsap";
 
 export function ProcessNew() {
   const root = useRef<HTMLElement>(null);
@@ -24,15 +24,10 @@ export function ProcessNew() {
       });
 
       // Шаги мягко появляются по одному.
-      const items = self.selector!("[data-process-item]");
-      items.forEach((el: Element) => {
-        gsap.from(el, {
-          opacity: 0,
-          x: -24,
-          duration: 0.55,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 80%", once: true },
-        });
+      staggerReveal(self.selector!("[data-process-item]"), {
+        x: -24,
+        y: 0,
+        stagger: 0.1,
       });
     }, root);
     return () => ctx.revert();

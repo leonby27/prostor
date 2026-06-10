@@ -26,4 +26,44 @@ export function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+/**
+ * Надёжное каскадное появление элементов при скролле.
+ *
+ * Почему так, а не `gsap.from` с одним триггером на контейнер:
+ * - конечное состояние задано явно (`to` → opacity 1) и после завершения
+ *   инлайн-стили снимаются (`clearProps`) — контент не может «застрять»
+ *   полупрозрачным, даже если кадры анимации задержались;
+ * - `ScrollTrigger.batch` вешает триггер на каждый элемент — ряды ниже
+ *   экрана появляются, когда пользователь до них доходит, а не играют
+ *   вслепую вместе с первым рядом.
+ *
+ * Вызывать внутри gsap.context() — триггеры снимутся при revert.
+ */
+export function staggerReveal(
+  elements: Element[],
+  {
+    y = 24,
+    x = 0,
+    stagger = 0.08,
+  }: { y?: number; x?: number; stagger?: number } = {},
+) {
+  if (!elements.length) return;
+  gsap.set(elements, { opacity: 0, y, x });
+  ScrollTrigger.batch(elements, {
+    start: "top 88%",
+    once: true,
+    onEnter: (batch) =>
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        duration: 0.55,
+        ease: "power3.out",
+        stagger,
+        overwrite: true,
+        clearProps: "opacity,transform",
+      }),
+  });
+}
+
 export { gsap, ScrollTrigger };

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Clock, MapPin, Ruler } from "@phosphor-icons/react";
 import { SectionTitleNew } from "./section-title";
 import { projects } from "@/lib/content";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, prefersReducedMotion, staggerReveal } from "@/lib/gsap";
 
 /* Фолбэк-фото для проектов без своего кадра — подбираем по стилю. */
 const fallbackImage: Record<string, string> = {
@@ -20,14 +20,7 @@ export function WorksNew() {
   useLayoutEffect(() => {
     if (prefersReducedMotion() || !root.current) return;
     const ctx = gsap.context((self) => {
-      gsap.from(self.selector!("[data-work-card]"), {
-        opacity: 0,
-        y: 26,
-        duration: 0.55,
-        ease: "power3.out",
-        stagger: 0.08,
-        scrollTrigger: { trigger: root.current, start: "top 75%", once: true },
-      });
+      staggerReveal(self.selector!("[data-work-card]"), { y: 26 });
     }, root);
     return () => ctx.revert();
   }, []);

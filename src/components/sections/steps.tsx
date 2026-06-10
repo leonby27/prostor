@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, prefersReducedMotion, staggerReveal } from "@/lib/gsap";
 import { steps } from "@/lib/content";
 
 export function Steps() {
@@ -15,15 +15,9 @@ export function Steps() {
       const cards = self.selector!("[data-step-card]");
       const numbers = self.selector!("[data-step-num]");
 
-      // Появление карточек со стаггером при входе секции в зону видимости.
-      gsap.from(cards, {
-        opacity: 0,
-        y: 28,
-        duration: 0.6,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: { trigger: root.current, start: "top 75%", once: true },
-      });
+      // Появление карточек со стаггером — надёжный паттерн set→to
+      // с per-карточным триггером (см. staggerReveal).
+      staggerReveal(cards, { y: 28, stagger: 0.1 });
 
       // Scroll-scrubbed параллакс крупных номеров — лёгкая глубина.
       numbers.forEach((num: Element, i: number) => {

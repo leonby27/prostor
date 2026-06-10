@@ -24,22 +24,34 @@ export function HeroNew() {
     if (prefersReducedMotion() || !root.current) return;
     const ctx = gsap.context(() => {
       // Спокойное каскадное появление: слева текст, справа фото.
+      // set → to с явным финалом и clearProps: контент не может
+      // «застрять» скрытым, если кадры анимации задержатся.
+      gsap.set("[data-hero-fade]", { opacity: 0, y: 22 });
+      gsap.set("[data-hero-photo]", { opacity: 0, scale: 0.97 });
+      gsap.set("[data-hero-chip]", { opacity: 0, y: 10 });
       gsap
         .timeline({ defaults: { ease: "power3.out" } })
-        .from("[data-hero-fade]", {
-          opacity: 0,
-          y: 22,
+        .to("[data-hero-fade]", {
+          opacity: 1,
+          y: 0,
           duration: 0.6,
           stagger: 0.09,
+          clearProps: "opacity,transform",
         })
-        .from(
+        .to(
           "[data-hero-photo]",
-          { opacity: 0, scale: 0.97, duration: 0.7 },
+          { opacity: 1, scale: 1, duration: 0.7, clearProps: "opacity,transform" },
           "-=0.5",
         )
-        .from(
+        .to(
           "[data-hero-chip]",
-          { opacity: 0, y: 10, duration: 0.4, stagger: 0.06 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.06,
+            clearProps: "opacity,transform",
+          },
           "-=0.3",
         );
 
