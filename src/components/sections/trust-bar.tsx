@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { CountUp } from "@/components/ui/count-up";
 import { trustStats, brands } from "@/lib/content";
 
 export function TrustBar() {
@@ -12,7 +13,7 @@ export function TrustBar() {
             {trustStats.map((s) => (
               <div key={s.label} className="text-center sm:text-left">
                 <dt className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                  {s.value}
+                  <CountUp value={s.value} />
                 </dt>
                 <dd className="mt-1 text-sm text-muted">{s.label}</dd>
               </div>
