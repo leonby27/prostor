@@ -49,6 +49,41 @@
 }
 
 /* ============================================================
+   Тёмная тема
+   Переключатель добавляет класс .dark на <html>. Все утилиты
+   (bg-paper, text-ink, border-stone …) ссылаются на эти же
+   переменные, поэтому достаточно переопределить токены.
+   ============================================================ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Тёплый премиальный «ночной» вариант палитры */
+  --color-paper: #15120d; /* фон страницы — тёплый почти-чёрный */
+  --color-sand: #1e1a14; /* поверхности секций (светлее фона) */
+  --color-stone: #342e25; /* линии, border */
+  --color-ink: #f1ece2; /* основной текст */
+  --color-muted: #a69d8d; /* вторичный текст */
+  --color-clay: #d6764e; /* акцент (чуть ярче для тёмного фона) */
+  --color-clay-dark: #c2653f; /* акцент hover */
+  --color-clay-soft: #3a2417; /* мягкая подложка акцента */
+  --color-espresso: #0d0b08; /* самые тёмные блоки */
+  --color-espresso-2: #1a1610; /* карточки на тёмном */
+  --color-cream: #efe9df; /* текст/элементы на тёмном */
+
+  /* Тени глубже — на тёмном фоне светлые тени не читаются */
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 8px 16px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================================
    База
    ============================================================ */
 
@@ -62,6 +97,8 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s var(--ease-out-soft),
+    color 0.3s var(--ease-out-soft);
 }
 
 ::selection {

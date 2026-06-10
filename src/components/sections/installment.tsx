@@ -102,7 +102,7 @@ export function Installment() {
               </div>
 
               {/* ── Правая колонка: калькулятор-превью ── */}
-              <div className="rounded-[1.75rem] bg-white p-5 text-ink shadow-card ring-1 ring-black/5 sm:p-7">
+              <div className="rounded-[1.75rem] bg-white p-5 text-ink shadow-card ring-1 ring-black/5 dark:bg-espresso-2 dark:ring-white/10 sm:p-7">
                 <div className="flex items-center justify-between">
                   <p className="font-display text-sm font-semibold text-ink">
                     Рассчитать платёж

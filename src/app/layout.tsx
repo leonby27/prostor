@@ -48,8 +48,18 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
+      suppressHydrationWarning
       className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        {/* Ставим тему до первой отрисовки: сохранённый выбор или системная.
+            Без этого был бы кратковременный «мигающий» светлый экран. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full bg-paper text-ink">{children}</body>
     </html>
   );

@@ -64,11 +64,7 @@ export function MediaSlot({
 function Placeholder({ label }: { label: string }) {
   return (
     <div
-      className="absolute inset-0 grid place-items-center"
-      style={{
-        background:
-          "linear-gradient(135deg, #f3eee6 0%, #ece4d8 55%, #e3d8c8 100%)",
-      }}
+      className="absolute inset-0 grid place-items-center bg-gradient-to-br from-sand via-stone/50 to-stone text-ink"
       aria-hidden
     >
       {/* Тонкий узор-сетка */}
@@ -76,12 +72,12 @@ function Placeholder({ label }: { label: string }) {
         className="absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(28,26,22,0.06) 1px, transparent 1px)",
+            "radial-gradient(color-mix(in srgb, currentColor 8%, transparent) 1px, transparent 1px)",
           backgroundSize: "16px 16px",
         }}
       />
       <div className="relative flex flex-col items-center gap-3 px-6 text-center">
-        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/70 text-clay shadow-soft ring-1 ring-stone">
+        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-paper/80 text-clay shadow-soft ring-1 ring-stone">
           <PhotoIcon className="h-6 w-6" />
         </span>
         <span className="text-sm font-medium text-muted">{label}</span>

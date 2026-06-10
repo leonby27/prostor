@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { site, nav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -62,6 +63,7 @@ export function Header() {
             <Phone weight="fill" className="h-4 w-4 text-clay" />
             {site.phone.display}
           </a>
+          <ThemeToggle />
           <Button href="#quiz" size="sm" className="hidden sm:inline-flex">
             {site.cta.primary}
           </Button>
@@ -87,7 +89,7 @@ export function Header() {
             transition={{ duration: 0.2 }}
           >
             <div
-              className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
+              className="absolute inset-0 bg-ink/40 backdrop-blur-sm dark:bg-black/60"
               onClick={() => setOpen(false)}
             />
             <motion.div
