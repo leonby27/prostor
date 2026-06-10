@@ -52,11 +52,11 @@ export default function RootLayout({
       className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
-        {/* Ставим тему до первой отрисовки: сохранённый выбор или системная.
-            Без этого был бы кратковременный «мигающий» светлый экран. */}
+        {/* Ставим тему до первой отрисовки: по умолчанию светлая,
+            тёмная — только если пользователь явно её выбрал. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
+            __html: `(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();`,
           }}
         />
       </head>
