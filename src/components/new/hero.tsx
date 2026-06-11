@@ -17,7 +17,7 @@ const BULLETS = [
   "Гарантия 5 лет делом, не строчкой",
 ];
 
-export function HeroNew() {
+export function HeroNew({ worksHref = "#works" }: { worksHref?: string }) {
   const root = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
@@ -119,7 +119,7 @@ export function HeroNew() {
                 <ArrowRight weight="bold" className="h-5 w-5" />
               </a>
               <a
-                href="#works"
+                href={worksHref}
                 className="inline-flex items-center justify-center rounded-full border border-stone px-8 py-4 text-base font-semibold text-ink transition-colors hover:border-clay/50 hover:text-clay"
               >
                 Смотреть работы

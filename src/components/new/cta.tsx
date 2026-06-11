@@ -7,7 +7,7 @@ import { formatByPhone, isValidByPhone } from "@/lib/phone";
 
 type Status = "idle" | "sending" | "ok" | "error";
 
-export function CtaNew() {
+export function CtaNew({ source = "Лендинг v2 (new)" }: { source?: string }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -25,7 +25,7 @@ export function CtaNew() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, source: "Лендинг v2 (new)" }),
+        body: JSON.stringify({ name, phone, source }),
       });
       if (!res.ok) throw new Error();
       setStatus("ok");
@@ -36,7 +36,7 @@ export function CtaNew() {
   }
 
   return (
-    <section id="lead" className="pt-24 sm:pt-32">
+    <section id="lead" className="pt-24 pb-24 sm:pt-32 sm:pb-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="overflow-hidden rounded-3xl bg-espresso px-6 py-14 sm:px-14 sm:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-clay">

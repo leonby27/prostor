@@ -1,6 +1,7 @@
 import { Header } from "@/components/sections/header";
-import { Hero } from "@/components/sections/hero";
-import { TrustBar } from "@/components/sections/trust-bar";
+import { HeroNew } from "@/components/new/hero";
+import { TickerNew } from "@/components/new/ticker";
+import { StatsNew } from "@/components/new/stats";
 import { Scenarios } from "@/components/sections/scenarios";
 import { Advantages } from "@/components/sections/advantages";
 import { Promos } from "@/components/sections/promos";
@@ -16,6 +17,7 @@ import { Installment } from "@/components/sections/installment";
 import { Reviews } from "@/components/sections/reviews";
 import { Showroom } from "@/components/sections/showroom";
 import { Faq } from "@/components/sections/faq";
+import { CtaNew } from "@/components/new/cta";
 import { Footer } from "@/components/sections/footer";
 import { FloatingActions } from "@/components/sections/floating-actions";
 import { site } from "@/lib/site";
@@ -55,8 +57,9 @@ export default function Home() {
       />
       <Header />
       <main>
-        <Hero />
-        <TrustBar />
+        <HeroNew worksHref="#gallery" />
+        <TickerNew />
+        <StatsNew />
         <Scenarios />
         <Advantages />
         <Promos />
@@ -72,6 +75,7 @@ export default function Home() {
         <Installment />
         <Showroom />
         <Faq />
+        <CtaNew source="Лендинг (главная)" />
       </main>
       <Footer />
       <FloatingActions />

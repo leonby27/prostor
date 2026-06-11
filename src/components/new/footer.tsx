@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export function FooterNew() {
   return (
-    <footer className="mt-24 border-t border-stone sm:mt-32">
+    <footer className="border-t border-stone">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
