@@ -13,7 +13,6 @@ import { Materials } from "@/components/sections/materials";
 import { Appliances } from "@/components/sections/appliances";
 import { Steps } from "@/components/sections/steps";
 import { Team } from "@/components/sections/team";
-import { Installment } from "@/components/sections/installment";
 import { Reviews } from "@/components/sections/reviews";
 import { Showroom } from "@/components/sections/showroom";
 import { Faq } from "@/components/sections/faq";
@@ -72,7 +71,6 @@ export default function Home() {
         <Appliances />
         <Steps />
         <Team />
-        <Installment />
         <Showroom />
         <Faq />
         <CtaNew source="Лендинг (главная)" />

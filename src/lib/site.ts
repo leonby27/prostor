@@ -51,6 +51,5 @@ export const nav = [
   { label: "Стили", href: "#styles" },
   { label: "Работы", href: "#gallery" },
   { label: "О нас", href: "#team" },
-  { label: "Рассрочка", href: "#installment" },
   { label: "Вопросы", href: "#faq" },
 ] as const;
