@@ -27,39 +27,35 @@ export function prefersReducedMotion(): boolean {
 }
 
 /**
- * Надёжное каскадное появление элементов при скролле.
+ * Простое появление блока при скролле: все элементы проявляются разом,
+ * один триггер на весь блок (по умолчанию — их общий контейнер).
  *
- * Почему так, а не `gsap.from` с одним триггером на контейнер:
- * - конечное состояние задано явно (`to` → opacity 1) и после завершения
- *   инлайн-стили снимаются (`clearProps`) — контент не может «застрять»
- *   полупрозрачным, даже если кадры анимации задержались;
- * - `ScrollTrigger.batch` вешает триггер на каждый элемент — ряды ниже
- *   экрана появляются, когда пользователь до них доходит, а не играют
- *   вслепую вместе с первым рядом.
+ * Почему так, а не `ScrollTrigger.batch` на каждый элемент: при per-card
+ * триггерах нижний ряд карточек ждёт, пока до него доскроллишь, и внутри
+ * одного блока карточки оказываются в разной фазе. Один триггер на блок
+ * убирает эту «ступенчатость». Конечное состояние задано явно (opacity 1),
+ * инлайн-стили снимаются (`clearProps`) — контент не застрянет скрытым.
  *
- * Вызывать внутри gsap.context() — триггеры снимутся при revert.
+ * Вызывать внутри gsap.context() — триггер снимется при revert.
  */
 export function staggerReveal(
   elements: Element[],
-  {
-    y = 24,
-    x = 0,
-    stagger = 0.08,
-  }: { y?: number; x?: number; stagger?: number } = {},
+  { y = 20, x = 0, trigger }: { y?: number; x?: number; trigger?: Element } = {},
 ) {
   if (!elements.length) return;
+  const triggerEl = trigger ?? elements[0].parentElement ?? elements[0];
   gsap.set(elements, { opacity: 0, y, x });
-  ScrollTrigger.batch(elements, {
-    start: "top 88%",
+  ScrollTrigger.create({
+    trigger: triggerEl,
+    start: "top 85%",
     once: true,
-    onEnter: (batch) =>
-      gsap.to(batch, {
+    onEnter: () =>
+      gsap.to(elements, {
         opacity: 1,
         y: 0,
         x: 0,
-        duration: 0.55,
-        ease: "power3.out",
-        stagger,
+        duration: 0.45,
+        ease: "power2.out",
         overwrite: true,
         clearProps: "opacity,transform",
       }),

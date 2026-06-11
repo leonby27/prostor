@@ -24,11 +24,7 @@ export function ProcessNew() {
       });
 
       // Шаги мягко появляются по одному.
-      staggerReveal(self.selector!("[data-process-item]"), {
-        x: -24,
-        y: 0,
-        stagger: 0.1,
-      });
+      staggerReveal(self.selector!("[data-process-item]"), { x: -24, y: 0 });
     }, root);
     return () => ctx.revert();
   }, []);

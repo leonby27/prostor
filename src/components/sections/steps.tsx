@@ -17,7 +17,7 @@ export function Steps() {
 
       // Появление карточек со стаггером — надёжный паттерн set→to
       // с per-карточным триггером (см. staggerReveal).
-      staggerReveal(cards, { y: 28, stagger: 0.1 });
+      staggerReveal(cards, { y: 28 });
 
       // Scroll-scrubbed параллакс крупных номеров — лёгкая глубина.
       numbers.forEach((num: Element, i: number) => {

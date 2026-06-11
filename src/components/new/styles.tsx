@@ -67,7 +67,7 @@ export function StylesNew() {
   useLayoutEffect(() => {
     if (prefersReducedMotion() || !root.current) return;
     const ctx = gsap.context((self) => {
-      staggerReveal(self.selector!("[data-style-card]"), { y: 24, stagger: 0.06 });
+      staggerReveal(self.selector!("[data-style-card]"), { y: 24 });
     }, root);
     return () => ctx.revert();
   }, []);
