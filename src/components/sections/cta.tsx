@@ -7,7 +7,7 @@ import { formatByPhone, isValidByPhone } from "@/lib/phone";
 
 type Status = "idle" | "sending" | "ok" | "error";
 
-export function CtaNew({ source = "Лендинг v2 (new)" }: { source?: string }) {
+export function Cta({ source = "Лендинг (главная)" }: { source?: string }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState<Status>("idle");

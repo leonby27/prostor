@@ -1,7 +1,7 @@
 import { Header } from "@/components/sections/header";
-import { HeroNew } from "@/components/new/hero";
-import { TickerNew } from "@/components/new/ticker";
-import { StatsNew } from "@/components/new/stats";
+import { Hero } from "@/components/sections/hero";
+import { Ticker } from "@/components/sections/ticker";
+import { Stats } from "@/components/sections/stats";
 import { Scenarios } from "@/components/sections/scenarios";
 import { Advantages } from "@/components/sections/advantages";
 import { Promos } from "@/components/sections/promos";
@@ -16,8 +16,8 @@ import { Team } from "@/components/sections/team";
 import { Reviews } from "@/components/sections/reviews";
 import { Showroom } from "@/components/sections/showroom";
 import { Faq } from "@/components/sections/faq";
-import { CtaNew } from "@/components/new/cta";
-import { FooterNew } from "@/components/new/footer";
+import { Cta } from "@/components/sections/cta";
+import { Footer } from "@/components/sections/footer";
 import { FloatingActions } from "@/components/sections/floating-actions";
 import { site } from "@/lib/site";
 
@@ -56,9 +56,9 @@ export default function Home() {
       />
       <Header />
       <main>
-        <HeroNew worksHref="#gallery" />
-        <TickerNew />
-        <StatsNew />
+        <Hero />
+        <Ticker />
+        <Stats />
         <Scenarios />
         <Advantages />
         <Promos />
@@ -73,9 +73,9 @@ export default function Home() {
         <Team />
         <Showroom />
         <Faq />
-        <CtaNew source="Лендинг (главная)" />
+        <Cta />
       </main>
-      <FooterNew />
+      <Footer />
       <FloatingActions />
     </>
   );

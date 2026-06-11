@@ -1,8 +1,8 @@
 import { CountUp } from "@/components/ui/count-up";
 import { trustStats } from "@/lib/content";
 
-/** Издательский ряд цифр: огромные значения на хайрлайнах. */
-export function StatsNew() {
+/** Ряд ключевых цифр со счётчиками на хайрлайнах. */
+export function Stats() {
   return (
     <section className="border-b border-stone">
       <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">

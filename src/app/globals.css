@@ -157,10 +157,10 @@ h4 {
 }
 
 /* ============================================================
-   Бегущая промо-строка (компонент TickerNew на главной).
+   Бегущая промо-строка (компонент Ticker).
    Два одинаковых блока внутри трека, сдвиг на 50% — бесшовный цикл.
    ============================================================ */
-@keyframes v2-marquee {
+@keyframes marquee {
   from {
     transform: translateX(0);
   }
@@ -169,22 +169,18 @@ h4 {
   }
 }
 
-.v2-marquee {
+.marquee {
   display: flex;
   width: max-content;
-  animation: v2-marquee var(--marquee-duration, 40s) linear infinite;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
 }
 
-.v2-marquee--reverse {
-  animation-direction: reverse;
-}
-
-.v2-marquee-mask:hover .v2-marquee {
+.marquee-mask:hover .marquee {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .v2-marquee {
+  .marquee {
     animation: none;
   }
 }

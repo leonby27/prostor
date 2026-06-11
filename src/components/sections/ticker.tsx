@@ -18,16 +18,16 @@ function Row({ items }: { items: string[] }) {
 }
 
 /** Бегущая промо-строка. Чистый CSS (keyframes в globals), без JS. */
-export function TickerNew() {
+export function Ticker() {
   const items = promos.map((p) => p.title);
 
   return (
     <div
-      className="v2-marquee-mask mt-16 overflow-hidden border-y border-stone bg-espresso py-4"
+      className="marquee-mask mt-16 overflow-hidden border-y border-stone bg-espresso py-4"
       aria-label={items.join(" · ")}
     >
       <div
-        className="v2-marquee"
+        className="marquee"
         style={{ "--marquee-duration": "28s" } as React.CSSProperties}
       >
         <Row items={items} />
