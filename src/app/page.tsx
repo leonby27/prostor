@@ -17,7 +17,7 @@ import { Reviews } from "@/components/sections/reviews";
 import { Showroom } from "@/components/sections/showroom";
 import { Faq } from "@/components/sections/faq";
 import { CtaNew } from "@/components/new/cta";
-import { Footer } from "@/components/sections/footer";
+import { FooterNew } from "@/components/new/footer";
 import { FloatingActions } from "@/components/sections/floating-actions";
 import { site } from "@/lib/site";
 
@@ -75,7 +75,7 @@ export default function Home() {
         <Faq />
         <CtaNew source="Лендинг (главная)" />
       </main>
-      <Footer />
+      <FooterNew altVersionHref="/new" altVersionLabel="Новая версия сайта" />
       <FloatingActions />
     </>
   );
