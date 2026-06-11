@@ -1,13 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-export function FooterNew({
-  altVersionHref = "/",
-  altVersionLabel = "Классическая версия сайта",
-}: {
-  altVersionHref?: string;
-  altVersionLabel?: string;
-} = {}) {
+export function FooterNew() {
   return (
     <footer className="border-t border-stone">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
@@ -64,15 +58,9 @@ export function FooterNew({
 
             <div className="text-sm">
               <p className="font-semibold uppercase tracking-[0.16em] text-muted">
-                Версии
+                Документы
               </p>
-              <Link
-                href={altVersionHref}
-                className="mt-3 block text-muted hover:text-ink"
-              >
-                {altVersionLabel}
-              </Link>
-              <Link href="/privacy" className="mt-1.5 block text-muted hover:text-ink">
+              <Link href="/privacy" className="mt-3 block text-muted hover:text-ink">
                 Политика конфиденциальности
               </Link>
             </div>

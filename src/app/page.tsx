@@ -75,7 +75,7 @@ export default function Home() {
         <Faq />
         <CtaNew source="Лендинг (главная)" />
       </main>
-      <FooterNew altVersionHref="/new" altVersionLabel="Новая версия сайта" />
+      <FooterNew />
       <FloatingActions />
     </>
   );
