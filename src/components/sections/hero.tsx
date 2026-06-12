@@ -10,6 +10,7 @@ import {
 } from "@phosphor-icons/react";
 import { included } from "@/lib/content";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { versionedImage } from "@/lib/images";
 
 const BULLETS = [
   "Замер и 3D-проект — бесплатно",
@@ -147,7 +148,7 @@ export function Hero({ worksHref = "#gallery" }: { worksHref?: string }) {
             <div className="relative aspect-[4/4.4] overflow-hidden rounded-3xl shadow-lift sm:aspect-[4/4]">
               <div data-hero-img className="absolute inset-0 -top-[8%] h-[116%]">
                 <Image
-                  src="/images/openplan.jpg"
+                  src={versionedImage("/images/openplan.jpg")}
                   alt="Кухня с открытой планировкой — наша работа"
                   fill
                   priority

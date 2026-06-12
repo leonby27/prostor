@@ -124,7 +124,7 @@ function Kitchen() {
         <meshStandardMaterial color={C.clayDark} roughness={0.6} />
       </RoundedBox>
 
-      {/* Подвесной светильник над островом */}
+      {/* Подвесной светильник над рабочей зоной */}
       <group position={[1.15, 1.9, 0.1]}>
         <mesh>
           <cylinderGeometry args={[0.004, 0.004, 0.5, 8]} />

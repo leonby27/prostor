@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { materials } from "@/lib/content";
+import { versionedImage } from "@/lib/images";
 
 export function Materials() {
   return (
@@ -12,8 +13,8 @@ export function Materials() {
         <Reveal className="order-2 lg:order-1">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lift sm:aspect-[4/3] lg:aspect-[4/4.6]">
             <Image
-              src="/images/project-green.jpg"
-              alt="Кухня с островом: фасады, столешница и фурнитура"
+              src={versionedImage("/images/project-green.jpg")}
+              alt="Кухня: фасады, столешница и фурнитура"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

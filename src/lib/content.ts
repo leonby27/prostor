@@ -29,6 +29,7 @@ import {
   Sun,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Icon } from "@phosphor-icons/react";
+import { versionedImage } from "@/lib/images";
 
 /* ============================ Доверие ============================ */
 
@@ -103,7 +104,7 @@ export const scenarios: Scenario[] = [
   {
     icon: House,
     title: "Для частного дома",
-    text: "Нестандартная геометрия и большие площади? Спроектируем кухню с островом под ваши размеры — без компромиссов.",
+    text: "Нестандартная геометрия и большие площади? Спроектируем удобную кухню под ваши размеры — без компромиссов.",
     tag: "любые размеры",
   },
   {
@@ -127,8 +128,8 @@ export const scenarios: Scenario[] = [
   {
     icon: Couch,
     title: "Кухня-гостиная",
-    text: "Объединённое пространство? Кухня красиво продолжит гостиную: остров, барная зона, скрытая техника.",
-    tag: "остров и барная зона",
+    text: "Объединённое пространство? Кухня красиво продолжит гостиную: барная зона, скрытая техника и аккуратное хранение.",
+    tag: "барная зона",
   },
   {
     icon: PaintRoller,
@@ -201,7 +202,7 @@ export const promos: Promo[] = [
     cta: "Забрать подарок",
     tone: "clay",
     icon: Gift,
-    image: "/images/appliance.jpg",
+    image: versionedImage("/images/appliance.jpg"),
   },
   {
     id: "skidka",
@@ -308,37 +309,37 @@ export const styles: Style[] = [
     id: "modern",
     name: "Современная",
     description: "Гладкие фасады без ручек, минимум деталей",
-    image: "/images/style-modern.jpg",
+    image: versionedImage("/images/style-modern.jpg"),
   },
   {
     id: "scandi",
     name: "Скандинавская",
     description: "Светлое дерево, белый и натуральные текстуры",
-    image: "/images/style-scandi.jpg",
+    image: versionedImage("/images/style-scandi.jpg"),
   },
   {
     id: "neoclassic",
     name: "Неоклассика",
     description: "Сдержанные фрезеровки, латунь и спокойные тона",
-    image: "/images/style-neoclassic.jpg",
+    image: versionedImage("/images/style-neoclassic.jpg"),
   },
   {
     id: "classic",
     name: "Классическая",
     description: "Глубокий цвет, рамочные фасады, благородство",
-    image: "/images/style-classic.jpg",
+    image: versionedImage("/images/style-classic.jpg"),
   },
   {
     id: "minimal",
     name: "Минимализм",
     description: "Чистые линии, контраст и функциональность",
-    image: "/images/style-minimal.jpg",
+    image: versionedImage("/images/style-minimal.jpg"),
   },
   {
     id: "loft",
     name: "Лофт",
     description: "Бетон, металл и тёплое дерево, характер индустрии",
-    image: "/images/style-loft.jpg",
+    image: versionedImage("/images/style-loft.jpg"),
   },
 ];
 
@@ -368,7 +369,7 @@ export const projects: Project[] = [
     size: "3,6 м",
     term: "30 дней",
     price: "5 900 BYN",
-    image: "/images/project-cooking.jpg",
+    image: versionedImage("/images/project-cooking.jpg"),
   },
   {
     id: "p2",
@@ -378,7 +379,7 @@ export const projects: Project[] = [
     size: "6,0 м",
     term: "38 дней",
     price: "11 200 BYN",
-    image: "/images/openplan.jpg",
+    image: versionedImage("/images/openplan.jpg"),
   },
   {
     id: "p3",
@@ -388,25 +389,27 @@ export const projects: Project[] = [
     size: "4,2 м",
     term: "32 дня",
     price: "6 850 BYN",
-    image: "/images/hero-kitchen.jpg",
+    image: versionedImage("/images/hero-kitchen.jpg"),
   },
   {
     id: "p4",
-    title: "Неоклассика с островом",
+    title: "Неоклассика в спокойных тонах",
     style: "Неоклассика",
     location: "Гродно",
     size: "5,1 м",
     term: "35 дней",
     price: "9 400 BYN",
+    image: versionedImage("/images/project-neoclassic.jpg"),
   },
   {
     id: "p5",
-    title: "Глубокий зелёный в частном доме",
+    title: "Глубокий зелёный для семьи",
     style: "Классическая",
     location: "д. Боровляны",
     size: "4,8 м",
     term: "34 дня",
     price: "8 700 BYN",
+    image: versionedImage("/images/project-family-green.jpg"),
   },
   {
     id: "p6",
@@ -416,6 +419,7 @@ export const projects: Project[] = [
     size: "2,8 м",
     term: "26 дней",
     price: "4 300 BYN",
+    image: versionedImage("/images/project-small-studio.jpg"),
   },
 ];
 
@@ -514,7 +518,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Заказывали кухню в новостройку. Дизайнер учёл каждую мелочь, собрали точно в срок. Рассрочка 0% очень выручила — спасибо!",
     // avatar: "/images/reviews/olga.jpg",
-    // kitchenPhoto: "/images/reviews/olga-kitchen.jpg",
+    kitchenPhoto: versionedImage("/images/reviews/olga-kitchen.jpg"),
   },
   {
     id: "r2",
@@ -525,7 +529,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Долго выбирали и не прогадали. Качество фасадов и фурнитуры на высоте, доводчики Blum работают идеально. Доставили даже в область без проблем.",
     // avatar: "/images/reviews/kravtsovy.jpg",
-    // kitchenPhoto: "/images/reviews/kravtsovy-kitchen.jpg",
+    kitchenPhoto: versionedImage("/images/reviews/kravtsovy-kitchen.jpg"),
   },
   {
     id: "r3",
@@ -536,7 +540,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Понравилось, что цену назвали сразу и она не изменилась. 3D-проект помог всё представить заранее. Монтажники аккуратные.",
     // avatar: "/images/reviews/sergey.jpg",
-    // kitchenPhoto: "/images/reviews/sergey-kitchen.jpg",
+    kitchenPhoto: versionedImage("/images/reviews/sergey-kitchen.jpg"),
   },
   {
     id: "r4",
@@ -547,7 +551,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Кухня мечты в неоклассике! Цвет подобрали идеально под интерьер. Через год пользования — ни одного нарекания.",
     // avatar: "/images/reviews/ekaterina.jpg",
-    // kitchenPhoto: "/images/reviews/ekaterina-kitchen.jpg",
+    kitchenPhoto: versionedImage("/images/reviews/ekaterina-kitchen.jpg"),
   },
   {
     id: "r5",
@@ -557,6 +561,7 @@ export const reviews: Review[] = [
     date: "Февраль 2025",
     rating: 5,
     text: "Стены в хрущёвке кривые, думал намучаемся. Замерщик всё учёл, кухня встала идеально, щелей нет вообще. Приятно удивлён.",
+    kitchenPhoto: versionedImage("/images/reviews/andrey-kitchen.jpg"),
   },
   {
     id: "r6",
@@ -565,7 +570,8 @@ export const reviews: Review[] = [
     city: "Гродно",
     date: "Декабрь 2024",
     rating: 5,
-    text: "Заказывала кухню-гостиную с островом. Дизайнер предложил пару решений по хранению, до которых сама бы не додумалась. Очень довольна.",
+    text: "Заказывала кухню-гостиную с барной зоной. Дизайнер предложил пару решений по хранению, до которых сама бы не додумалась. Очень довольна.",
+    kitchenPhoto: versionedImage("/images/reviews/marina-kitchen.jpg"),
   },
   {
     id: "r7",
@@ -575,6 +581,7 @@ export const reviews: Review[] = [
     date: "Октябрь 2024",
     rating: 4,
     text: "Кухней доволен, качество хорошее. Сроки сдвинулись на несколько дней, но предупредили заранее и компенсировали мелочью. В целом рекомендую.",
+    kitchenPhoto: versionedImage("/images/reviews/vitaly-kitchen.jpg"),
   },
   {
     id: "r8",
@@ -584,6 +591,7 @@ export const reviews: Review[] = [
     date: "Сентябрь 2024",
     rating: 5,
     text: "Брали тариф «Оптимальная». Камень на столешнице шикарный, подсветка рабочей зоны — то, чего не хватало на старой кухне. Спасибо!",
+    kitchenPhoto: versionedImage("/images/reviews/natalya-igor-kitchen.jpg"),
   },
   {
     id: "r9",
@@ -593,6 +601,7 @@ export const reviews: Review[] = [
     date: "Август 2024",
     rating: 5,
     text: "Доставили аж в Гомель без единой царапины. Монтажники собрали за день, подключили технику, всё убрали. Чисто, как будто и не было сборки.",
+    kitchenPhoto: versionedImage("/images/reviews/svetlana-kitchen.jpg"),
   },
   {
     id: "r10",
@@ -602,6 +611,7 @@ export const reviews: Review[] = [
     date: "Июль 2024",
     rating: 5,
     text: "Долго сравнивал с другими. Здесь честно показали смету по пунктам, без скрытых доплат в конце. Итоговая цена совпала с той, что назвали на замере.",
+    kitchenPhoto: versionedImage("/images/reviews/pavel-kitchen.jpg"),
   },
   {
     id: "r11",
@@ -611,6 +621,7 @@ export const reviews: Review[] = [
     date: "Июнь 2024",
     rating: 5,
     text: "Неоклассика в светлых тонах — мечтала о такой. Фрезеровка фасадов аккуратная, цвет подобрали тон в тон к плитке. Гости в восторге.",
+    kitchenPhoto: versionedImage("/images/reviews/elena-kitchen.jpg"),
   },
   {
     id: "r12",
@@ -620,6 +631,7 @@ export const reviews: Review[] = [
     date: "Май 2024",
     rating: 4,
     text: "Кухня отличная, фурнитура Blum работает мягко. Снял звезду только за то, что пришлось пару раз самому напоминать о статусе заказа. По качеству — претензий ноль.",
+    kitchenPhoto: versionedImage("/images/reviews/dmitry-shevchuk-kitchen.jpg"),
   },
   {
     id: "r13",
@@ -629,6 +641,7 @@ export const reviews: Review[] = [
     date: "Апрель 2024",
     rating: 5,
     text: "Маленькая кухня в студии. Уместили холодильник, посудомойку и кучу ящиков — не верила, что всё влезет. Каждый сантиметр работает.",
+    kitchenPhoto: versionedImage("/images/reviews/olga-bondarenko-kitchen.jpg"),
   },
   {
     id: "r14",
@@ -637,7 +650,8 @@ export const reviews: Review[] = [
     city: "Минский р-н",
     date: "Март 2024",
     rating: 5,
-    text: "Частный дом, большая кухня нестандартной формы. Спроектировали под наши размеры без компромиссов. Остров получился именно таким, как хотели.",
+    text: "Частный дом, большая кухня нестандартной формы. Спроектировали под наши размеры без компромиссов. Получилось удобно и красиво.",
+    kitchenPhoto: versionedImage("/images/reviews/sergey-tatyana-kitchen.jpg"),
   },
   {
     id: "r15",
@@ -647,6 +661,7 @@ export const reviews: Review[] = [
     date: "Февраль 2024",
     rating: 5,
     text: "Рассрочку оформили прямо на замере за 15 минут, без первого взноса. Кухня уже стоит, а платим спокойно частями. Очень выручило перед новосельем.",
+    kitchenPhoto: versionedImage("/images/reviews/anna-lagun-kitchen.jpg"),
   },
   {
     id: "r16",
@@ -656,6 +671,7 @@ export const reviews: Review[] = [
     date: "Январь 2024",
     rating: 5,
     text: "Меняли старую кухню. Прежнюю бесплатно демонтировали и вывезли, новую собрали в тот же день. Никакой возни со свалкой — забрали всё подчистую.",
+    kitchenPhoto: versionedImage("/images/reviews/igor-savitsky-kitchen.jpg"),
   },
 ];
 
@@ -678,22 +694,22 @@ export type TeamMember = {
  */
 export const team: TeamMember[] = [
   {
-    name: "Имя Фамилия",
+    name: "Алексей Руденко",
     role: "Дизайнер-замерщик",
     quote: "Приеду на замер и помогу спланировать кухню под вашу квартиру.",
-    // photo: "/images/team/designer.jpg",
+    photo: versionedImage("/images/team/designer.jpg"),
   },
   {
-    name: "Имя Фамилия",
+    name: "Ирина Климович",
     role: "Технолог производства",
     quote: "Слежу, чтобы каждый фасад и распил были без брака.",
-    // photo: "/images/team/technolog.jpg",
+    photo: versionedImage("/images/team/technolog.jpg"),
   },
   {
-    name: "Имя Фамилия",
+    name: "Павел Мороз",
     role: "Бригадир монтажа",
     quote: "Соберём и подключим аккуратно, уберём за собой.",
-    // photo: "/images/team/montazh.jpg",
+    photo: versionedImage("/images/team/montazh.jpg"),
   },
 ];
 
@@ -709,10 +725,10 @@ export type ProductionShot = {
  * /public/images/production/. Доказывают, что вы делаете, а не перепродаёте.
  */
 export const productionShots: ProductionShot[] = [
-  { caption: "Свой цех в Минске", /* image: "/images/production/shop.jpg" */ },
-  { caption: "Раскрой и кромление", /* image: "/images/production/cut.jpg" */ },
-  { caption: "Покрасочная камера", /* image: "/images/production/paint.jpg" */ },
-  { caption: "Сборка и контроль", /* image: "/images/production/assembly.jpg" */ },
+  { caption: "Свой цех в Минске", image: versionedImage("/images/production/shop.jpg") },
+  { caption: "Раскрой и кромление", image: versionedImage("/images/production/cut.jpg") },
+  { caption: "Покрасочная камера", image: versionedImage("/images/production/paint.jpg") },
+  { caption: "Сборка и контроль", image: versionedImage("/images/production/assembly.jpg") },
 ];
 
 /* =============================== FAQ =============================== */

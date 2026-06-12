@@ -12,6 +12,7 @@ import { MediaSlot } from "@/components/ui/media-slot";
 import { Button } from "@/components/ui/button";
 import { ViberIcon } from "@/components/ui/brand-icons";
 import { site } from "@/lib/site";
+import { versionedImage } from "@/lib/images";
 
 export function Showroom() {
   return (
@@ -26,7 +27,7 @@ export function Showroom() {
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {/* Фото шоурума */}
           <MediaSlot
-            src="/images/showroom.jpg"
+            src={versionedImage("/images/showroom.jpg")}
             alt="Шоурум «Простор» в Минске"
             label="Фото шоурума"
             aspect="aspect-[4/3] lg:aspect-auto lg:h-full"

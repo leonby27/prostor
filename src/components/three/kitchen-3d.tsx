@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { Suspense, useSyncExternalStore } from "react";
 import Image from "next/image";
+import { versionedImage } from "@/lib/images";
 
 /**
  * Клиентская обёртка над 3D-сценой кухни.
@@ -19,7 +20,7 @@ const KitchenScene = dynamic(() => import("./kitchen-scene"), { ssr: false });
 function Fallback() {
   return (
     <Image
-      src="/images/hero-kitchen.jpg"
+      src={versionedImage("/images/hero-kitchen.jpg")}
       alt="Современная светлая кухня на заказ"
       fill
       priority

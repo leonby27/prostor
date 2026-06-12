@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { applianceBrands } from "@/lib/content";
+import { versionedImage } from "@/lib/images";
 
 const perks = [
   { icon: Wrench, text: "Установим и подключим технику сами" },
@@ -49,7 +50,7 @@ export function Appliances() {
         <Reveal>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lift">
             <Image
-              src="/images/appliance.jpg"
+              src={versionedImage("/images/appliance.jpg")}
               alt="Встраиваемая кухонная техника"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -36,7 +36,7 @@ const steps: Step[] = [
       { id: "straight", label: "Прямая", hint: "вдоль одной стены" },
       { id: "corner", label: "Угловая", hint: "Г-образная" },
       { id: "u", label: "П-образная", hint: "вдоль трёх стен" },
-      { id: "island", label: "С островом", hint: "отдельная зона" },
+      { id: "bar", label: "С барной зоной", hint: "стойка или полуостров" },
     ],
   },
   {
